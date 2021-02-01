@@ -67,20 +67,20 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
             un_joueur.nbPartiesJouees++;
              un_joueur.nbPartiesGagnees++;
              un_joueur.nbTentatives=un_joueur.nbTentatives+i;
-        } 
-        if (nombre_ecrit >= nombreADeviner)
+        }
+        if (nombre_ecrit > nombreADeviner)
         {
             (cout << "Non, il est plus petit ;)  \n");
-            i++
+            i++;
         }
-        if (nombre_ecrit <= nombreADeviner)
+        if (nombre_ecrit < nombreADeviner)
         {
             (cout << "Non, il est plus grand ;)  \n");
-            i++
+            i++;
         }
-        
+
     }
-    
+
     if (i==5)
     {
         cout << "T'as perdu !\n";
@@ -89,7 +89,7 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
     }
 }
 
-
+//****************************************************************************************************************************************************
 // Nom : MajResultatsJoueur
 // Rôle : met à jour les informations du joueur passé en paramètre
 // Paramètres d'entrée: nbEssais, gagne
@@ -98,9 +98,13 @@ void JouerPartie(TJoueur& un_joueur, int nombreADeviner)
 
 void MajResultatsJoueur(TJoueur joueur, int nbEssais, bool gagne)
 {
-   // A COMPLETER
+   un_joueur.nbTentatives=un_joueur.nbTentatives+nbEssais;
+   if (gagne==true)
+   {
+       un_joueur.nbPartiesJouees++;
+   }
 }
-
+//*****************************************************************************************************************************************************
 // Nom : ResultatsJoueur
 // Rôle : indique les résultats du joueur passé en paramètre
 //        le nombre de parties gagnées, le nombre de parties perdues, le nombre d'essais total
@@ -113,7 +117,7 @@ void ResultatsJoueur(TJoueur joueur, int& nbsucces, int& nbechec, int& nbessais)
 {
     // A COMPLETER
 }
-
+//**************************************************************************************************************************************************************
 // Nom :Nom
 // Rôle : retourne le nom du joueur
 // Paramètres d'entrée: le joueur dont on veut le nom
